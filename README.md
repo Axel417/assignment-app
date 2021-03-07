@@ -18,3 +18,13 @@ INFORMATIONS IMPORTANTE :
   - email : eude@gmail.com ; pass: koffi 
   - email : soro@gmail.com ; pass: soro
 
+
+CE QUI A ETE REALISE :
+
+- Formualaire d'authentifiaction donnant l'accès à l'application. Authentificationréalisée à l'aide de Json Web Tokens (JWT) en suivant le tutoriel suivant: https://www.freecodecamp.org/news/securing-node-js-restful-apis-with-json-web-tokens-9f811a92bb52/;
+- Ajout de nouvelles propriétés au modèle des Assignments;
+- Amélioration de l'affichage des Assignments en utilisant les matérials card;
+- Amélioration du formulaire de création d'assignment en utilisant les stepper;
+- Ajout d'un bouton de trie pour l'affichage des assignments permettant d'afficher: tous les assignlents, les assignement rendu et les assignements non rendu;
+- Ajout des méssage de notification en utilisant les SnackBar Material personnalisée;
+- Enfin Hébergement de l'application sur HEROKU.
