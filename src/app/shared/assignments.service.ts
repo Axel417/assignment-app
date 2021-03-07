@@ -17,7 +17,10 @@ export class AssignmentsService {
   ) {}
 
   //url = 'https://apimbds2021.herokuapp.com/api/assignments';
-  url = 'http://localhost:8010/api/assignments';
+  //url = 'http://localhost:8010/api/assignments';
+  url = 'https://api-bd.herokuapp.com/api/assignments';
+
+  //bien
 
   getAssignments(): Observable<Assignment[]> {
     console.log('Dans getAssignments dans le service...');
