@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         if (result.auth === true ){
           console.log(result.token);
           this.authService.logIn(result.token);
-        }else if (result.auth === false ){
+        }else if (result.auth == false ){
           this.notifierService.showNotification('Echec de Connexion !!!', 'OK', 'error');
           this.authService.logOut();
           this.router.navigate(['/']);
