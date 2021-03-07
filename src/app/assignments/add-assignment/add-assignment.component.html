@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link" >Gestion des devoirs </a>
+    </li>
+
+    <li class="nav-item ">
+      <a class="nav-link active"  routerLink="/add" >Ajouter un Devoir</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/home" >Afficher les Devoirs</a>
+    </li>
+
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <button   (click)="deconnexion();" class="btn btn-danger">
+      Déconnexion
+    </button>
+  </ul>
+</nav>
+<br>
+<br>
+<br>
+
+<!--Début du stepper-->
+
+<div class="container">
+  <br><br>
+  <h4>Nouveau Devoir</h4>
+  <br>
+      <mat-vertical-stepper >
+        <mat-step [stepControl]="firstFormGroup">
+
+          <form ngForm>
+            <ng-template matStepLabel>Information sur le nouveau devoir</ng-template>
+
+            <mat-form-field>
+              <input matInput placeholder="Intitulé du Devoir" [(ngModel)]="nomDevoir" name="nom" required>
+            </mat-form-field><br>
+
+            <mat-form-field>
+              <input matInput placeholder="Date" [matDatepicker]="datepicker" [(ngModel)]="dateDeRendu" name="date" required>
+
+              <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+              <mat-datepicker #datepicker></mat-datepicker>
+
+            </mat-form-field><br>
+
+            <mat-form-field>
+              <input matInput placeholder="Nom de l'élève" [(ngModel)]="nomEleve" name="nomeleve" required>
+            </mat-form-field>
+
+            <div>
+              <button class="btn btn-secondary" matStepperNext>Suivant</button>
+            </div>
+
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
+          <form ngForm>
+            <ng-template matStepLabel>Choix de la matière</ng-template>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Selectionner</mat-label>
+              <mat-select [(ngModel)]="resultat" name="resultat" required>
+                <mat-option *ngFor="let a of unique  " [value]="a">{{a}}</mat-option>
+              </mat-select>
+              <mat-hint align="end">Cliquez sur la flèche </mat-hint>
+            </mat-form-field>
+
+            <div class="btn-block">
+              <br>
+
+              <button style="margin-right: 5px" class="btn btn-info" matStepperPrevious>Retour</button>
+              <button class="btn btn-secondary" matStepperNext>Suivant</button>
+
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+
+          <ng-template matStepLabel>Fin</ng-template>
+
+          <div>
+            <button style="margin-right: 5px" class="btn btn-info" matStepperPrevious>Retour</button>
+            <button class="btn btn-success" (click)="onSubmit($event);">Valider</button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+
+
+      <!--Fin du stepper-->
+      <br><br><br>
+
+</div>

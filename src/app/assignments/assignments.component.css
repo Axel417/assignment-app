@@ -1,0 +1,63 @@
+
+.full{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  background-color: #8c9393;
+}
+
+.nav-item{
+  margin-right: 5px;
+}
+.container {
+
+  display: flex;
+  flex-direction: column;
+  background-color: #73b4b4;
+  border-radius: 2%;
+}
+
+.ajouterBtn {
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+.rendu {
+  color: green;
+}
+
+.nonrendu {
+  color: red;
+  background-color: yellow;
+  border: 2px dashed orange;
+  padding: 2px;
+}
+
+.gros {
+  font-size: 40px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.ImgProf{
+  object-fit: cover; /*this makes the image in src fit to the size specified below*/
+  width: 70px; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 70px;
+}
+.ImgMat{
+  object-fit: cover; /*this makes the image in src fit to the size specified below*/
+  width: 200px; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}

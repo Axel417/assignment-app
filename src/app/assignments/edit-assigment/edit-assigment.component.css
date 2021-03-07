@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+.container {
+
+  display: flex;
+  flex-direction: column;
+  background-color: #73b4b4;
+  border-radius: 2%;
+  padding: 30px;
+}
+
+.sncackcolor{
+  background: #8edb47;
+}

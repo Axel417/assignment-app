@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>SAISIE DE LA NOTE ET DE LA REMARQUE</h1>
+<div mat-dialog-content>
+
+    <mat-form-field>
+        <mat-label>Note (obligatoire)</mat-label>
+        <input matInput required type="number" [(ngModel)]="note">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Remarque (non obligatoire)</mat-label>
+        <input matInput type="text" [(ngModel)]="remarque">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Annuler</button>
+    <button mat-button (click)="validation()" cdkFocusInitial>Valider</button>
+</div>

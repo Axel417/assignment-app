@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link" >Gestion des devoirs </a>
+    </li>
+
+    <li class="nav-item ">
+      <a class="nav-link "  routerLink="/add" >Ajouter un Devoir</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link active " routerLink="/home" >Afficher les Devoirs</a>
+    </li>
+
+
+
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <button   (click)="deconnexion();" class="btn btn-danger">
+      Déconnexion
+    </button>
+  </ul>
+</nav>
+<br><br><br><br>
+
+<div class="container">
+    <mat-card *ngIf="assignmentTransmis">
+      <div class=" d-flex justify-content-center ">
+      <U><h4 class="">Détails sur le devoir n° <small>{{assignmentTransmis.id}}</small> concernant: <span style="color: blue">{{assignmentTransmis.nom}}</span></h4></U>
+      </div>
+      <br>
+        <mat-card-title> <h6 style="color: brown">Date rendu: {{assignmentTransmis.dateDeRendu | date}}</h6> </mat-card-title>
+        <mat-card-title>Nom de l'élève: {{assignmentTransmis.nom}}</mat-card-title>
+
+        <mat-card-subtitle>
+            <h3>Note: {{assignmentTransmis.note}}</h3>
+            <h3>Appréciation: {{assignmentTransmis.remarque}}</h3>
+        </mat-card-subtitle>
+        <br>
+        <div id="bottom">
+            <mat-checkbox *ngIf="!assignmentTransmis.rendu" (click)="onAssignmentRendu()">
+                Devoir rendu
+            </mat-checkbox>
+
+            <button mat-flat-button color="primary" [disabled]="!loggedIn()" (click)="onClickEdit()">
+        MODIFIER
+      </button>
+
+            <button mat-flat-button color="warn" [disabled]="!loggedIn()" (click)="onDelete()">
+        SUPPRIMER
+      </button>
+        </div>
+    </mat-card>
+</div>
